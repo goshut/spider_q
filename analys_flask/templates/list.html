@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/main1.css">
+    <script src="../static/js/jquery-1.12.4.min.js"></script>
+    <script>
+            $(function(){
+    
+                $('.left p').click(function(){
+                    // var a=$(this).attr('l')
+                    // alert(a)
+                    $($(this).attr('l')).removeClass('s').siblings().addClass('s');
+                    // $('.tab_cons').animate({'left':-$(this).index()*500});
+    
+                })
+    
+            })
+          
+    
+    </script>
+
+</head>
+<body>
+    <div class="left">
+            <p l=".c1">All Categories</p>
+            <p l=".c2">Art</p>
+            <p l=".c3">Comics</p>
+            <p l=".c4">Dance & Theater</p>
+            <p l=".c5">Film</p>
+            <p l=".c6">Music</p>
+            <p l=".c7">Photography</p>
+            <p l=".c8">Podcasts, Blogs & Vlogs</p>
+    </div>
+    <div class="right">
+        <div  class="c1" >
+        <table>
+            <tr>
+                <th>项目编号</th>
+                <th>项目标题</th>
+                <th>开始日期</th>
+                <th>单日涨幅($)</th>
+            </tr>
+            {% for data in all_data%}
+                {% set the_href = "http://127.0.0.1:5000/show/" + data.project_id|string %}
+{#                <a href={{ the_href }}>#}
+                <tr>
+                    <td>{{ data.project_id }}</td>
+                    <td><a  href={{ the_href }}>{{ data.title }}</a></td>
+                    <td>{{ data.open_date }}</td>
+                    <td>{{ data["raise"] }}</td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+        </div>
+
+        <div class="c2 s">
+        <table>
+                <tr>
+                    <th>项目编号</th>
+                    <th>项目标题</th>
+                    <th>开始日期</th>
+                    <th>单日涨幅($)</th>
+                </tr>
+            {% for data in art%}
+                {% set the_href = "http://127.0.0.1:5000/show/" + data.project_id|string %}
+                <tr>
+                    <td>{{ data.project_id }}</td>
+                    <td><a  href={{ the_href }}>{{ data.title }}</a></td>
+                    <td>{{ data.open_date }}</td>
+                    <td>{{ data["raise"] }}</td>
+                </tr>
+            {% endfor %}
+
+            </table></div>
+
+            <div class="c3 s">
+            <table>
+                <tr>
+                        <th>项目编号</th>
+                        <th>项目标题</th>
+                        <th>开始日期</th>
+                        <th>单日涨幅($)</th>
+                </tr>
+                {% for data in Comics%}
+                    {% set the_href = "http://127.0.0.1:5000/show/" + data.project_id|string %}
+                <tr>
+                    <td>{{ data.project_id }}</td>
+                    <td><a  href={{ the_href }}>{{ data.title }}</a></td>
+                    <td>{{ data.open_date }}</td>
+                    <td>{{ data["raise"] }}</td>
+                </tr>
+                {% endfor %}
+
+                </table></div>
+    <div  class="c4 s" >
+        <table>
+            <tr>
+                <th>项目编号</th>
+                <th>项目标题</th>
+                <th>开始日期</th>
+                <th>单日涨幅($)</th>
+            </tr>
+            {% for data in Dance%}
+                {% set the_href = "http://127.0.0.1:5000/show/" + data.project_id|string %}
+                <tr>
+                    <td>{{ data.project_id }}</td>
+                    <td><a  href={{ the_href }}>{{ data.title }}</a></td>
+                    <td>{{ data.open_date }}</td>
+                    <td>{{ data["raise"] }}</td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+        </div>
+    <div  class="c5 s" >
+        <table>
+            <tr>
+                <th>项目编号</th>
+                <th>项目标题</th>
+                <th>开始日期</th>
+                <th>单日涨幅($)</th>
+            </tr>
+            {% for data in Film%}
+                {% set the_href = "http://127.0.0.1:5000/show/" + data.project_id|string %}
+                <tr>
+                    <td>{{ data.project_id }}</td>
+                    <td><a  href={{ the_href }}>{{ data.title }}</a></td>
+                    <td>{{ data.open_date }}</td>
+                    <td>{{ data["raise"] }}</td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+        </div>
+    <div  class="c6 s" >
+        <table>
+            <tr>
+                <th>项目编号</th>
+                <th>项目标题</th>
+                <th>开始日期</th>
+                <th>单日涨幅($)</th>
+            </tr>
+            {% for data in Music%}
+                {% set the_href = "http://127.0.0.1:5000/show/" + data.project_id|string %}
+                <tr>
+                    <td>{{ data.project_id }}</td>
+                    <td><a  href={{ the_href }}>{{ data.title }}</a></td>
+                    <td>{{ data.open_date }}</td>
+                    <td>{{ data["raise"] }}</td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+        </div>
+    <div  class="c7 s" >
+        <table>
+            <tr>
+                <th>项目编号</th>
+                <th>项目标题</th>
+                <th>开始日期</th>
+                <th>单日涨幅($)</th>
+            </tr>
+            {% for data in Photography%}
+                {% set the_href = "http://127.0.0.1:5000/show/" + data.project_id|string %}
+                <tr>
+                    <td>{{ data.project_id }}</td>
+                    <td><a  href={{ the_href }}>{{ data.title }}</a></td>
+                    <td>{{ data.open_date }}</td>
+                    <td>{{ data["raise"] }}</td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+        </div>
+    <div  class="c8 s" >
+        <table>
+            <tr>
+                <th>项目编号</th>
+                <th>项目标题</th>
+                <th>开始日期</th>
+                <th>单日涨幅($)</th>
+            </tr>
+            {% for data in Podcasts%}
+                {% set the_href = "http://127.0.0.1:5000/show/" + data.project_id|string %}
+                <tr>
+                    <td>{{ data.project_id }}</td>
+                    <td><a  href={{ the_href }}>{{ data.title }}</a></td>
+                    <td>{{ data.open_date }}</td>
+                    <td>{{ data["raise"] }}</td>
+                </tr>
+            {% endfor %}
+
+
+        </table>
+        </div>
+    </div>
+</body>
+</html>
