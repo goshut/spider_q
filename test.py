@@ -1,4 +1,3 @@
-# 统计有多少商品
 from datetime import datetime, timedelta
 
 import requests
